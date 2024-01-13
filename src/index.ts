@@ -3,7 +3,7 @@ import cors from "cors";
 import router from "./routes/route";
 import swaggerDocs from "./configs/swagger";
 import logger from "morgan"
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT) || 5000;
 
 const app = express();
 
@@ -25,6 +25,6 @@ app.use('/', router);
 
 
 app.listen(port, () => {
-    console.log('server is up and running')
+    console.log(`server is running on ${port}`)
     swaggerDocs(app, port)
 });
