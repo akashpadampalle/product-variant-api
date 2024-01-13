@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/', router);
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css'}));
 
 app.listen(port, () => {
     console.log(`server is running on ${port}`)

@@ -34,7 +34,7 @@ app.use(express_1.default.urlencoded({ extended: true }));
 // app.use(express.static("public"));
 // routes
 app.use('/', route_1.default);
-app.use('/docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerSpec));
+app.use('/docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerSpec, { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css' }));
 app.listen(port, () => {
     console.log(`server is running on ${port}`);
     // swaggerDocs(app, port)
