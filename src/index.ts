@@ -35,12 +35,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // serve static files :: used for api documentation
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css'}));
 
 // routes
 app.use('/', router);
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css'}));
 
 app.listen(port, () => {
     console.log(`server is running on ${port}`)
