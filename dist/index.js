@@ -20,7 +20,7 @@ const options = {
             version: package_json_1.version
         }
     },
-    apis: ['./dist/routes/route.js']
+    apis: ['dist/**/*.js']
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 const app = (0, express_1.default)();
@@ -30,8 +30,6 @@ app.use((0, cors_1.default)());
 // url encodings
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// serve static files :: used for api documentation
-app.use(express_1.default.static("public"));
 app.use('/docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerSpec, { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css' }));
 // routes
 app.use('/', route_1.default);

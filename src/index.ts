@@ -18,7 +18,7 @@ const options: swaggerJSDoc.Options = {
             version: version
         }
     },
-    apis: ['./dist/routes/route.js']
+    apis: ['dist/**/*.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options);
@@ -34,8 +34,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// serve static files :: used for api documentation
-app.use(express.static("public"));
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec, {customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css'}));
 
