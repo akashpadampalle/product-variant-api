@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import router from "./routes/route";
-// import swaggerDocs from "./configs/swagger";
 import logger from "morgan"
 
 import swaggerJSDoc from "swagger-jsdoc";
@@ -42,5 +41,4 @@ app.use('/', router);
 
 app.listen(port, () => {
     console.log(`server is running on ${port}`)
-    // swaggerDocs(app, port)
 });
