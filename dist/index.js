@@ -20,7 +20,7 @@ const options = {
             version: package_json_1.version
         }
     },
-    apis: ['./src/routes/route.ts']
+    apis: ['./dist/routes/route.js']
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 const app = (0, express_1.default)();
