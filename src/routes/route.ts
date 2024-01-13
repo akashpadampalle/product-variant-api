@@ -1,7 +1,11 @@
-import { Router } from "express";
+import { Router, Response } from "express";
 import productController from "../controllers/products";
 import variantController from "../controllers/variants";
 const router = Router();
+
+router.get('/', (_, response: Response) => {
+    return response.send('products-variants api');
+})
 
 /**
  * @openapi

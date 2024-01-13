@@ -25,8 +25,6 @@ function swaggerDocs(app: Express, port: number) {
         response.setHeader("Content-Type", "application/json");
         response.send(swaggerDocs);
     });
-
-    console.log('docs are available at http://localhost:3000/docs')
 }
 
 export default swaggerDocs;
